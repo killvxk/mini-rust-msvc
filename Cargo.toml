@@ -1,0 +1,22 @@
+cargo-features = ["edition2024","profile-rustflags","trim-paths"]
+[package]
+name = "mini-rust-msvc"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "z" # optimize for binary size
+debug = "none"
+panic = "abort"
+trim-paths="all"
+incremental = true
+strip = "debuginfo"
+[build-dependencies]
+thunk-rs = { version = "0.3.2" }
+
