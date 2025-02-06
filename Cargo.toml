@@ -1,4 +1,4 @@
-cargo-features = ["edition2024","profile-rustflags","trim-paths"]
+cargo-features = ["profile-rustflags","trim-paths"]
 [package]
 name = "mini-rust-msvc"
 version = "0.1.0"
@@ -17,6 +17,9 @@ panic = "abort"
 trim-paths="all"
 incremental = true
 strip = "debuginfo"
+Zstrip-debuginfo-if-disabled=true
+
+
 [build-dependencies]
 thunk-rs = { version = "0.3.2" }
 
